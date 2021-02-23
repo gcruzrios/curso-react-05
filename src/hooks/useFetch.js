@@ -24,18 +24,21 @@ export const useFetch = ( url ) => {
 
                if (isMounted.current ){
                     setState({
+                        loading: false,
+                        error: null,
+                        data
+                        });
+
+                }                             
+            })
+            .catch ( ()=> {
+                setState({
                     loading: false,
-                    error: null,
-                    data
-                    })
-
-                } else {
-                    console.log('setState no se llamó')
-                }
-
-                              
-                
-            });
+                    error: 'No se pudo cargar la info',
+                    data: null
+                    });  
+            });    
+           
 
     }, [url])
 
