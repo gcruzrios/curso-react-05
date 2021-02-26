@@ -36,7 +36,7 @@ export const TodoApp = () => {
 
 
     const handleDelete =( todoId ) => {
-        console.log(todoId)
+        //console.log(todoId)
 
         const action={
             type:'delete',
